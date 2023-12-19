@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #loader {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: black;
+            color: #fff;
+            z-index: 99;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+        #page1 {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .swiper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide img {
+            position: absolute;
+
+        }
+
+        #text {
+            position: relative;
+            z-index: 9;
+            height: 140vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.331);
+        }
+
+        #text h1 {
+
+
+            color: white;
+            margin-top: 45vw;
+            margin-left: 8vw;
+
+
+        }
+
+        .swiper-slide h1 span {
+            margin-left: 2px;
+            font-size: 110px;
+        }
+
+
+        #text img {
+            position: relative;
+            z-index: 99;
+            height: 30vh;
+            width: 26vh;
+            object-fit: cover;
+            margin: 300px 1000px;
+        }
+
+        #text h3 {
+            position: relative;
+            z-index: 99;
+            color: rgb(225, 9, 9);
+            margin-top: -11vw;
+            margin-left: 81vw;
+            font-size: 20px;
+
+        }
+
+        .swiper-slide {
+
+            text-align: left;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        #page1-content h1 {
+            font-size: 90px;
+        }
+
+        nav {
+            position: relative;
+            z-index: 9;
+            height: 60px;
+            width: 100%;
+            background-color: aliceblue;
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            padding: 2vw 2vw;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+            list-style: none;
+
+        }
+
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 2px;
+            bottom: 0;
+            background-color: #FF5F38;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 250ms ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        nav img {
+            height: 100%;
+            width: 525px;
+        }
+
+        #pag1 h1 {
+            position: relative;
+            z-index: 9;
+        }
+
+        #page2 {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background-color: aliceblue;
+
+        }
+
+        #page2-content {
+            position: absolute;
+            height: 80%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+
+
+        }
+
+        #left {
+            height: 100%;
+            width: 40%;
+            line-height: 2;
+        }
+
+        #right {
+            height: 100%;
+            width: 40%;
+            padding-top: 170px;
+            padding-left: 140px;
+
+        }
+
+        #right img {
+            height: 40vh;
+            width: 40vw;
+        }
+
+
+
+        #page2-content h4 {
+            font-size: 1rem;
+            padding-top: 70px;
+            color: red;
+
+        }
+
+        #page2-content h1 {
+            margin-bottom: 20px;
+
+        }
+
+        #page2-content h3 {
+            font-weight: 100;
+        }
+
+        #button {
+            border: 2px solid black;
+            border-radius: 30px;
+            width: 120px;
+            height: 40px;
+            margin-top: 20px;
+            padding: 10px;
+            transition: all 0.5s linear;
+
+        }
+
+
+        #button a {
+            text-decoration: none;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        #button:hover {
+            background-color: aqua;
+            color: aliceblue;
+        }
+
+        #page3 {
+
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <h3>one</h3>
+        <h3>stop,</h3>
+        <h3>solution"</h3>
+    </div>
+    <div id="main">
+        <div data-scroll data-scroll-speed="-5" id="page1">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div id="text">
+                            <h1><span>N</span><span>A</span><span>K</span><span>A</span><span>R
+                                </span><span>P</span><span>L</span><span>A</span><span>S</span><span>T</span><span>I</span><span>C</span><span>S
+                                </span></h1>
+                        </div>
+                        <img src="photos/19.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="text"></div>
+                        <img src="photos/banner3.png">
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="text">
+                            <img src="photos/2.png">
+
+                            <h3>Mobile No:<br>9810365653<br>9212165653<br>01141065653</h3>
+                            <h3>Ajay Jain</h3>
+
+                        </div>
+                        <img src="https://scrapo.com/images/caterg.png" alt="">
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+
+            </div>
+
+
+            <nav>
+                <img src="photos/1.png">
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="products.html">products</a></li>
+                    <li><a href="about.html"> About</a></li>
+                    <li><a href="contact.html"> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="page2">
+            <div id="page2-content">
+                <div id="left">
+                    <h4>About Us.</h4>
+                    <h1>Welcome To Navkar Plastic</h1>
+                    <h3>Navkar Plastics is established in year 1997.We are a leading supplier in pp plactics and all
+                        kinds of plastics raw material</h3>
+                    <div id="button"><a href="about.html">Read More</a></div>
+                </div>
+                <div id="right">
+                    <img src="photos/3.png" alt="">
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
+        integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+        const locoScroll = new LocomotiveScroll({
+            el: document.querySelector("#main"),
+            smooth: true
+        });
+        // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+        locoScroll.on("scroll", ScrollTrigger.update);
+
+        // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
+        ScrollTrigger.scrollerProxy("#main", {
+            scrollTop(value) {
+                return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+            }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+            getBoundingClientRect() {
+                return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+            },
+            // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+            pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+        });
+
+        // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+        // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+        ScrollTrigger.refresh();
+
+
+        var t1 = gsap.timeline()
+        t1.from("#loader h3", {
+            x: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: .1
+
+        })
+
+        t1.to("#loader h3", {
+            opacity: 0,
+            x: -40,
+            stagger: .2,
+            duration: 1
+
+        })
+
+        t1.to("#loader", {
+            opacity: 0
+        })
+
+        t1.to("#loader", {
+            display: "none"
+        })
+
+        t1.from(".swiper-slide h1 span", {
+            y: 100,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 1
+        })
+
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 7500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #page1 {
+            min-height: 200vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #swiper #text {
+            height: 30vh;
+            width: 100%;
+            position: absolute;
+
+            z-index: 9;
+            background-color: rgba(0, 0, 0, 0.377);
+        }
+
+        #swiper #text span {
+            margin-left: 67px;
+            position: absolute;
+            padding-top: 45;
+            font-size: 2rem;
+            font-weight: 200;
+        }
+
+        #swiper img {
+            height: 30vh;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            background-attachment: fixed;
+        }
+
+        nav {
+            position: sticky;
+            z-index: 99;
+            height: 60px;
+            width: 100%;
+            background-color: aliceblue;
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            padding: 2vw 2vw;
+
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+            list-style: none;
+
+        }
+
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 2px;
+            bottom: 0;
+            background-color: #FF5F38;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 250ms ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        nav img {
+            height: 100%;
+            width: 525px;
+        }
+
+        #content {
+            margin-top: 40px;
+
+        }
+
+        #content h1 span {
+            margin-left: 10px;
+            font-weight: 100;
+            border-bottom: 2px dotted black;
+        }
+
+        #products-1 {
+            height: 33vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 60px;
+
+        }
+
+        #products-1 #image1 {
+            height: 100%;
+            width: 20%;
+            background-color: antiquewhite;
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        #image1 img {
+
+            height: 100%;
+            width: 100%;
+        }
+
+        #products-2 {
+            height: 33vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 90px;
+
+        }
+
+        #products-2 #image2 {
+            height: 100%;
+            width: 20%;
+            background-color: rgb(228, 193, 146);
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        #image2 img {
+
+            height: 100%;
+            width: 100%;
+        }
+
+        #content h2{
+
+            margin-top:90px;
+            margin-left:50px;
+            font-weight: 100;
+        }
+        #content #image3{
+            width:70%;
+            margin-top:90px;
+            margin-left:50px;
+            padding:40ox 40px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="page1">
+
+            <nav>
+                <img src="photos/1.png">
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="products.html"> Products</a></li>
+                    <li><a href="about.html"> About</a></li>
+                    <li><a href="contact.html"> Contact</a></li>
+                </ul>
+            </nav>
+            <div id="swiper">
+                <div id="text"><span>PRODUCTS</span></div>
+                <img src="photos/banner3.png">
+            </div>
+
+            <div id="content">
+                <h1><span>Products</span></h1>
+                <div id="products-1">
+                    <div id="image1"><img src="photos/6.png" alt="">
+                        <h3>PP(polypropylene)</h3>
+                    </div>
+
+                    <div id="image1"><img src="photos/7.png" alt="">
+                        <h3>HD(high density)</h3>
+                    </div>
+                    <div id="image1"><img src="photos/8.png" alt="">
+                        <h3>LD(low density)</h3>
+                    </div>
+                </div>
+                <div id="products-2">
+                    <div id="image2"><img src="photos/9.png" alt="">
+                        <h3>Crystal</h3>
+                    </div>
+                    <div id="image2"><img src="photos/10.png" alt="">
+                        <h3>HIPS Fresh</h3>
+                    </div>
+                    <div id="image2"><img src="photos/11.png" alt="">
+                        <h3>Reprocess Plastic</h3>
+                    </div>
+                </div>
+                <h2>we deals in</h2>
+                <div id="image3"><img id="i2"src="photos/12.png"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
